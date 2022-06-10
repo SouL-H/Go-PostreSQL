@@ -67,9 +67,9 @@ func GetProducts() {
 	}
 	defer rows.Close()
 	var products []*Product
-	for rows.Next() {
+	for rows.Next() {//Sonraki satıra geçme.
 		prd := &Product{}
-		err := rows.Scan(&prd.ID, &prd.Title, &prd.Description, &prd.Price)
+		err := rows.Scan(&prd.ID, &prd.Title, &prd.Description, &prd.Price)//Select alınan veriyi bunun içerisine doldur sonra dolduracağım
 		if err != nil {
 			panic(err)
 		}
